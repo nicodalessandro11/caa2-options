@@ -84,7 +84,7 @@ export default {
         priority: "",
         content: "",
         labels: [""],
-        featured: true,
+        featured: false,
       },
     };
   },
