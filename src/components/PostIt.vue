@@ -1,33 +1,40 @@
 <template>
+  <!-- Post-it note with dynamic 'featured' class -->
   <div :class="['postit', { featured: featured }]">
+    <!-- Button to delete the Post-it -->
     <button class="delete-postit" @click="deletePostIt">
       <img src="../assets/delete-button.svg" alt="Delete Icon" />
     </button>
+    <!-- Title of the Post-it note -->
     <h2 class="postit-title">{{ title }}</h2>
+    <!-- Image associated with the Post-it note -->
     <div class="postit-image">
       <img :src="image" alt="Post-It Image" />
     </div>
+    <!-- Container for Post-it metadata -->
     <div class="postit-info">
+      <!-- Display date with icon -->
       <div class="postit-date">
         <img src="../assets/date.svg" alt="Date Icon" />
         <span>{{ date }}</span>
       </div>
+      <!-- Display time with icon -->
       <div class="postit-time">
         <img src="../assets/time.svg" alt="Time Icon" />
         <span>{{ time }}</span>
       </div>
+      <!-- Display priority level -->
       <div class="postit-priority">
-        <span class="priority" :class="[priority]">
-          {{ priority }}
-        </span>
+        <span class="priority" :class="[priority]">{{ priority }}</span>
       </div>
+      <!-- Display due date with icon -->
       <div class="postit-due-date">
         <img src="../assets/due-date.svg" alt="Due Date Icon" />
         <span>{{ dueDate }}</span>
       </div>
-      <div class="postit-content">
-        {{ content }}
-      </div>
+      <!-- Main content of the Post-it note -->
+      <div class="postit-content">{{ content }}</div>
+      <!-- Labels for the Post-it note -->
       <div class="postit-labels">
         <span v-for="label in labels" :key="label" class="label">
           {{ label }}

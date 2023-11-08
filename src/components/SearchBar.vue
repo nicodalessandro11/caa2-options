@@ -1,7 +1,11 @@
 <template>
+  <!-- Search bar with input and action buttons -->
   <div class="search-bar">
+    <!-- Text input for search functionality -->
     <input type="text" placeholder="Search Post-It" />
+    <!-- Button to clear the search input -->
     <button class="clear">Clear</button>
+    <!-- Button to trigger modal for adding a new Post-It -->
     <button class="add" @click="openModal">Add Post-It</button>
   </div>
 </template>
@@ -10,8 +14,8 @@
 export default {
   methods: {
     openModal() {
-        this.$emit('open')
-    }
+      this.$emit("open");
+    },
   },
 };
 </script>

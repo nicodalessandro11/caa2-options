@@ -1,18 +1,24 @@
 <template>
   <div class="main">
+    <!-- Header contains logo and application title -->
     <header class="header">
       <div class="header__left">
         <img src="./assets/uoc-logo.png" class="logo" alt="UOC Logo" />
         <span class="title">Post It Manager</span>
       </div>
     </header>
+    <!-- Main content -->
     <div class="content">
+      <!-- Components for search and filter functionality -->
       <SearchBar @open="toggleModal" />
       <FilterBar />
+      <!-- List display of Post-Its -->
       <main class="main">
         <PostItList :postItProp="postItArray" />
       </main>
+      <!-- Modal for adding a new Post-It, shown based on a boolean value -->
       <ModalLayer v-if="showModal" @close="toggleModal">
+        <!-- Slots for inserting custom header and body content into the modal -->
         <template v-slot:header> Add New Post-It </template>
         <template v-slot:body>
           <PostItForm @submit="handleSubmit" />
@@ -53,7 +59,7 @@ export default {
           id: 1,
           title: "Important Meeting",
           image:
-            "https://img.freepik.com/foto-gratis/mujer-morena-escribiendo-correo-electronico-computadora-portatil-mientras-sentado-su-casa-enfoque-selectivo-mano_171337-13093.jpg?w=996&t=st=1698849440~exp=1698850040~hmac=0b0645298ac89448f5c811d41d5c580d1bd4846bed53e95d0db0b4bb4f31406dg",
+            "https://img.freepik.com/fotos-kostenlos/unzufriedener-kandidat-der-waehrend-des-vorstellungsgespraechs-im-buero-mit-der-personalabteilung-ueber-seinen-lebenslauf-diskutiert_637285-6945.jpg?w=1060&t=st=1699485108~exp=1699485708~hmac=e10579d0232161f34eb3d6df3b98e2aaacd5bf0e7d96b62d5371bff53fcadcec",
           date: "2023-10-30",
           time: "09:00 AM",
           dueDate: "2023-11-15",
@@ -66,7 +72,7 @@ export default {
           id: 2,
           title: "Grocery List",
           image:
-            "https://img.freepik.com/foto-gratis/mujer-morena-escribiendo-correo-electronico-computadora-portatil-mientras-sentado-su-casa-enfoque-selectivo-mano_171337-13093.jpg?w=996&t=st=1698849440~exp=1698850040~hmac=0b0645298ac89448f5c811d41d5c580d1bd4846bed53e95d0db0b4bb4f31406d",
+            "https://img.freepik.com/fotos-kostenlos/essensplanung-und-verpflegung_23-2149099843.jpg?w=1060&t=st=1699484904~exp=1699485504~hmac=4a87f960d8a8fa0a6cfff72af274f8dc34d9e5deecc2a7805d166983e9f4d10fF",
           date: "2023-10-30",
           time: "10:00 AM",
           dueDate: "2023-10-31",
@@ -80,7 +86,7 @@ export default {
           id: 3,
           title: "Project Deadline",
           image:
-            "https://img.freepik.com/foto-gratis/mujer-morena-escribiendo-correo-electronico-computadora-portatil-mientras-sentado-su-casa-enfoque-selectivo-mano_171337-13093.jpg?w=996&t=st=1698849440~exp=1698850040~hmac=0b0645298ac89448f5c811d41d5c580d1bd4846bed53e95d0db0b4bb4f31406d",
+            "https://img.freepik.com/fotos-premium/arbeit-von-zu-hause-aus-junger-freiberufler-oder-geschaeftsmann-der-zu-hause-mit-smartphone-tablet-arbeitet-arbeiten_24901-2306.jpg",
           date: "2023-10-31",
           time: "02:00 PM",
           dueDate: "2023-11-10",
