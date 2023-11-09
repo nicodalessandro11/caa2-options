@@ -10,8 +10,8 @@
 export default {
   methods: {
     openModal() {
-        this.$emit('open')
-    }
+      this.$emit("open");
+    },
   },
 };
 </script>

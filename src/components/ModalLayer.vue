@@ -1,40 +1,40 @@
 <template>
-    <div class="modal">
-      <!-- Overlay to close modal on click -->
-      <div class="modal__overlay" @click="closeModal"></div>
-  
-      <!-- Modal content box -->
-      <div class="modal__content">
-        <!-- Modal header -->
-        <div class="modal__header">
-          <!-- Header slot for injecting header content -->
-          <slot name="header"></slot>
-          <!-- Close button with an image inside -->
-          <button @click="closeModal" class="modal__close">
-            <img src="../assets/close-button.svg" alt="Close Button" />
-          </button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal__body">
-          <!-- Body slot for injecting body content -->
-          <slot name="body"></slot>
-        </div>
+  <div class="modal">
+    <!-- Overlay to close modal on click -->
+    <div class="modal__overlay" @click="closeModal"></div>
+
+    <!-- Modal content box -->
+    <div class="modal__content">
+      <!-- Modal header -->
+      <div class="modal__header">
+        <!-- Header slot for injecting header content -->
+        <slot name="header"></slot>
+        <!-- Close button with an image inside -->
+        <button @click="closeModal" class="modal__close">
+          <img src="../assets/close-button.svg" alt="Close Button" />
+        </button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal__body">
+        <!-- Body slot for injecting body content -->
+        <slot name="body"></slot>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'ModalLayer',
-    methods: {
-      closeModal() {
-        // Emit an event to parent component to handle the closing of the modal
-        this.$emit('close');
-      },
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ModalLayer",
+  methods: {
+    closeModal() {
+      // Emit an event to parent component to handle the closing of the modal
+      this.$emit("close");
     },
-  };
-  </script>
+  },
+};
+</script>
 
 <style scoped>
 .modal {
